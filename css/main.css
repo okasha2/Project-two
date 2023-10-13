@@ -42,3 +42,30 @@ ul{
   }
 }
 /* End Global Roles */
+/* Start Header */
+header .container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header  .container a img{
+  width: 100px;
+}
+header .container nav ul {
+  display: flex;
+  margin-top: 15px;
+  margin-left: 210px;
+}
+header .container nav ul li{
+  margin-left: 40px;
+}
+header .container nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+header .container hr{
+  margin-top: 30px;
+  width: 100%;
+}
+/* End Header */
