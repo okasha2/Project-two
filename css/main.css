@@ -22,11 +22,53 @@ ul{
   padding-right:15px;
   position: relative;
   padding-top:15px;
+  min-height: 97px;
 }
 /* Small Screens */
+@media (max-width: 768px){
+  header .container nav{
+    display: none;
+  }
+  header .container nav{
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+  }
+  header .container nav ul{
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  header .container nav ul li::before{
+    width: 580% !important;
+    bottom: 0 !important;
+  }
+  header .container .icon:hover+nav{
+    visibility: visible;
+    display: flex;
+  }
+}
 @media (min-width: 768px) {
   .container{
     width: 750px;
+  }
+  header .container nav{
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+  }
+  header .container nav ul{
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  header .container nav ul li::before{
+    width: 580% !important;
+    bottom: 0 !important;
+  }
+  header .container .icon:hover+nav{
+    visibility: visible;
+    display: flex;
   }
 }
 /* Miduem Screens */
@@ -34,19 +76,48 @@ ul{
   .container{
     width: 970px;
   }
+  header .container .icon i:last-of-type{
+    visibility: hidden;
+  }
+  header .container nav ul {
+    margin-left: 280px;
+    visibility: visible;
+    flex-direction: row;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+  }
+  header .container nav ul li::before{
+    width: 100% !important;
+    bottom: -15px !important;
+  }
+  header .container nav{
+    left: -10px;
+  }
 }
 /* Large Screens */
 @media (min-width: 1200px) {
   .container{
     width: 1170px;
   }
+  header .container nav ul {
+    margin-left: 460px;
+  }
 }
 /* End Global Roles */
+/* Start Variabals */
+:root{
+  --main-color:#00c7fc;
+  --secondry-color:white;
+}
+/* End Variabals */
 /* Start Header */
 header {
-  background-color: #2f2f2f;
+  background-color: #1a1919;
   height: 100vh;
   margin-top: -20px;
+  position: absolute;
+  width: 100%;
 }
 header .container{
   margin-top: 20px;
@@ -56,32 +127,45 @@ header .container{
 }
 header  .container a img{
   width: 150px;
-  
+  position: absolute;
 }
 header .container nav ul {
   display: flex;
-  margin-top: 20px;
-  margin-left: 210px;
 }
 header .container nav ul li{
-  margin-left: 40px;
+  padding: 15px;
+  position: relative;
 }
 header .container nav ul li:hover a{
-  color:#00c7fc;
+  color:var(--main-color);
+}
+header .container nav ul li::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #00c7fc;
+  bottom: -30px;
+  visibility: hidden;
+}
+header .container nav ul li:hover::before{
+  visibility: visible;
 }
 header .container nav ul li a{
   text-decoration: none;
-  color: white;
+  color: var(--secondry-color);
+  display: block;
+  transition: 0.3s;
 }
 header .container hr{
   margin-top: 15px;
   width: 100%;
-  background-color: white;
+  background-color:var(--secondry-color);
 }
 header .container .icon i {
   font-size: 20px;
   margin-top: 15px;
-  color: white;
+  color:var(--secondry-color);
 }
 header .container .icon{
   position: relative;
@@ -90,12 +174,18 @@ header .container .icon::before{
   content: "";
   position: absolute;
   width: 1px;
-  background-color: white;
+  background-color: var(--secondry-color);
   height: 60%;
   left: -20px;
   top: 7px;
 }
 header .container .icon i:hover {
-  color:#00c7fc;
+  color:var(--main-color);
+}
+header .container .icon i:last-of-type{
+  /* visibility: hidden; */
+  position: absolute;
+  left: -60px;
+  top: 2px;
 }
 /* End Header */
