@@ -47,6 +47,19 @@ ul{
     visibility: visible;
     display: flex;
   }
+  .landing .overlay{
+    height: 50% !important;
+  }
+}
+@media (max-width: 500px){
+  .landing .overlay{
+    width: 100%!important;
+    top: 75% !important;
+  }
+  .landing .text{
+    width: 62% !important;
+    top: 73% !important;
+  }
 }
 @media (min-width: 768px) {
   .container{
@@ -113,9 +126,8 @@ ul{
 /* End Variabals */
 /* Start Header */
 header {
-  background-color: #1a1919;
   height: 100vh;
-  margin-top: -20px;
+  margin-top: 0;
   position: absolute;
   width: 100%;
 }
@@ -147,6 +159,7 @@ header .container nav ul li::before{
   background-color: #00c7fc;
   bottom: -30px;
   visibility: hidden;
+  left: -2px;
 }
 header .container nav ul li:hover::before{
   visibility: visible;
@@ -189,3 +202,73 @@ header .container .icon i:last-of-type{
   top: 2px;
 }
 /* End Header */
+/* Start Landing */
+.landing{
+  background-image: url("../Imigas/pexels-pixabay-206676.jpg");
+  background-size: cover;
+  background-color: #1a1919;
+  z-index:5;
+  height: 100vh;
+}
+.landing .overlay {
+  background-color:var(--main-color);
+  opacity: .5;
+  width: 65%;
+  height: 35%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.landing .text{
+  color: var(--secondry-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35%;
+  right: 35%;
+}
+.landing .looding {
+  position: absolute;
+  height: 10px;
+  bottom: 40px;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+}
+.landing .looding div{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 5px;
+}
+.landing .looding div:nth-of-type(2){
+  background-color: var(--main-color);
+  border: none;
+}
+.landing .direction{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-between;
+}
+.landing .direction div{ 
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+}
+.landing .direction div:first-of-type{
+margin-left: 30px;
+border-right-color: transparent;
+border-bottom-color: transparent;
+transform: rotate(-47deg);
+}
+.landing .direction div:last-of-type{
+  margin-right: 30px;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(-47deg);
+  }
+/* End Landing */
